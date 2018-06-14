@@ -1,0 +1,36 @@
+#include<stdio.h>
+int d=0;
+
+
+  int dividir(int numero  ){
+  
+    if(numero==0 ){
+      return 0 ;
+      }
+    else {
+      return numero ;
+      d = 2*dividir;
+      return d;
+     }
+    }
+
+  int main(){
+    int x;
+        printf("ingrece un numero " );
+    scanf ("%d ",&x );
+    printf ("su numero fue %d \n ",x  );
+     printf("y el binario es %d  \n " );
+     
+      int valores [50]={};
+      valores [d]= comvertirDecimal(x );
+       printf(" %d  ",valores[d] );
+	  
+	 
+    return 0;
+    
+  }
+
+     
+   
+   
+ 

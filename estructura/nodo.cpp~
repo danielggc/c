@@ -1,0 +1,18 @@
+struct nodo {
+  int info;
+  struct nodo* siguiente;
+};
+typedef struct nodo Nodo;
+int main()
+{
+  Nodo* j = new Nodo;
+  j->siguiente = new Nodo;
+  Nodo* k = j->siguiente;
+  j->siguiente = NULL;
+  delete k;
+  delete j;
+  j = NULL;
+  return 0;
+}
+
+

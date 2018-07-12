@@ -2,37 +2,35 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct nodo { 
-  int dato;
-  nodo *siguiente; 
-};
-int  agregarPila (nodo *, int & );
-int sacarPila(nodo *,int  );
+  struct nodo { 
+   int dato;
+   nodo *siguiente; 
+  };
 
+  int  agregarPila (nodo *, int & );
+  int sacarPila(nodo *,int  );
 
- int main(){
-   int numero=0;
-  nodo *pila;
-  printf("dijite un numero , para la pila!! " );
-  scanf("%d ",&numero );
-  agregarPila(pila,numero );
-  printf("\n dijite un segundo  numero , para la pila!! " );
-  scanf("%d ",&numero );
-  agregarPila(pila,numero );  
-  printf ("\n sacando elementos de la pila");
-  while (pila != NULL )
-     printf( " %d ",numero   );
-
-    sacarPila(pila,numero );
-   
-    if (pila!=NULL ){
-      printf( "el dato %d ",numero   );
-      printf(" ," );
-    }
-    else {
-      printf("\n  %d ",numero   );
-      printf(" ." );
-    }
+  int main(){
+     int numero=0;
+    nodo *pila;
+    printf("dijite un numero , para la pila!! " );
+    scanf("%d ",&numero );
+    agregarPila(pila,numero );
+    printf("\n dijite un segundo  numero , para la pila!! " );
+    scanf("%d ",&numero );
+    agregarPila(pila,numero );  
+    printf ("\n sacando elementos de la pila");
+    while (pila != NULL )
+       printf( " %d ",numero   );
+       sacarPila(pila,numero );   
+       if (pila!=NULL ){
+         printf( "el dato %d ",numero   );
+         printf(" ," );
+        }
+       else {
+         printf("\n  %d ",numero   );
+         printf(" ." );
+       }
   }
 
 

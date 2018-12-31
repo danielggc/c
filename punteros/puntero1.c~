@@ -1,0 +1,13 @@
+#include<stdio.h >
+int main (){
+  int dato =0;
+  printf("el valor del dato es d% ",dato )
+
+
+
+
+
+
+
+
+ }

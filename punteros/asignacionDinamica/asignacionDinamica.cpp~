@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h >
+
+int numDatosP=0;
+int *puntero;
+
+void recivirDatos();
+
+
+
+int main(){
+
+  int recivirDatos();
+
+}
+
+
+void recivirDatos(){
+
+  printf("escrivar la cantida de datos " );
+  scant("%d",numDatosP );
+  puntero =new int[numDatosP];
+  for( int i=0;i<=numDatosP;i++){
+     
+    scant("escriva los los datos %d",puntero[i]); 
+
+
+  }
+  
+
+}

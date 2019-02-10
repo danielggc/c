@@ -1,0 +1,21 @@
+#include<stdio.h>
+void cambio(*float,*float); 
+ 
+int main (){
+  float dato1=2.24;
+  float dat2=3.45;  
+
+  printf("el numerodel dato 2 es %d, y el del dato 2 es %d  ",dato1,dato2);
+  void cambio( dato1,dato2);
+  printf(" y haora %d , y %d",dato1,dato2);
+}
+
+
+
+void cambio( float *num1,float *num2){
+  float aux =0;
+  aux= *num1;
+  *num1=*num2;
+  *num2=aux;
+}
+

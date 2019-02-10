@@ -21,7 +21,7 @@
     agregarPila(pila,numero );  
     printf ("\n sacando elementos de la pila");
     while (pila != NULL )
-       printf( " %d ",numero   );
+       
        sacarPila(pila,numero );   
        if (pila!=NULL ){
          printf( "el dato %d ",numero   );

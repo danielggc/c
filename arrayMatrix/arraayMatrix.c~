@@ -1,0 +1,79 @@
+#include<stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+  int main(){
+    char respuesta[10];
+    int l=0;
+    int num=0;
+    int valor=0;
+    int x=0;
+    printf("ecriva porfavor la cantidad de datos ");
+    scanf(" %d",&x);
+    int matrix[x][x];
+    int arrayColumna[x];
+
+    int dato=0;
+    for(int f=0;f<x;f++){
+
+      for(int i=0;i<x;i++){
+	printf("escriva los datos de la fila %d , en orden ",f);
+        scanf("%d",&dato);
+        matrix[f][i]=dato;
+        
+      }
+  }
+
+
+    printf("\n si quiere  ver los datos guardado digite si o no \n");
+    scanf("%s",respuesta);
+
+    
+   
+    
+    if (strcmp( respuesta,"si")==0){
+       printf(" si quiere ver los todos escriva todas y siquiere ver columnas escriva columnas ");
+       char respuesta1[10];
+       scanf("%s",respuesta1);
+       if(strcmp(respuesta1,"todas")==0 )
+       {
+         for(int g=0;g<x;g++){
+           for(int d=0;d<x;d++){
+              printf(" %d ,",matrix[g][d]);
+           }
+	   
+         } 
+       }
+
+       
+       else
+      {
+        printf("escriva el numero de la columna y al finalisar escriva fin ");
+       
+
+	while(num==999){
+	    printf("hola esty aca !!");
+	    scanf("%d ",num);
+	    scanf("%s",respuesta);
+	    arrayColumna[l]=num;
+	    l++;
+ 
+ 	  }
+	
+       
+	 for(int d=0;d<=num;d++){
+	   valor =arrayColumna[d];
+	  for(int f=0;f<x;f++){
+	     printf("\n  %d",matrix[valor][f]);
+	}  
+
+	
+      }
+	
+    }
+
+    }    
+    else printf("gracias por depositar sus datos");
+
+
+}

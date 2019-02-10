@@ -1,0 +1,12 @@
+#include<stdio>
+
+int main(){
+  int a=0;
+  char dato[5]="hola"
+    printf("ell dato es %s"dato);
+    a=dato;
+    printf(" ASCII es %d"a)
+
+
+
+}

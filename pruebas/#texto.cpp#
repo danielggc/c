@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include <stdlib.h>
+int contar();
+
+
+
+
+int main(){
+  int contador=0;
+  int d=0;
+  contador=contar();
+  printf("%d",contador);
+  FILE *puntador;
+  char cadena[contador];
+  puntador=fopen("texto.txt","r" );
+  if(puntador!=NULL){
+    fgets(cadena,contador,puntador);
+    while(feof(puntador)==0){
+      fgets(cadena,contador,puntador);
+      d++;
+     
+    }
+    printf("lo que hay en el archivo es %s y %d",cadena,d);
+    fclose(puntador);
+
+   }
+  
+}
+
+int contar(){
+  char d;
+  int conteo=0;
+  FILE *puntero;
+  puntero=fopen("/home/danielgc7/Documentos/Elicaa.txt","r" );
+  while(feof(puntero)==0){
+    d=getc(puntero);
+    conteo++;
+    
+  }
+  fclose(puntero);
+  return (conteo);
+
+}

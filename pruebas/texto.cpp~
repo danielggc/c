@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include <stdlib.h>
+int contar();
+
+
+
+
+int main(){
+  int contador=0;
+  int d=0;  
+  printf("%d",contador);
+  FILE *puntador;
+  char cadena[contador];
+  puntador=fopen("/home/danielgc7/Documentos/Elicaa.txt","r" );
+  
+  
+    
+    printf("lo que hay en el archivo es %s y %d",cadena,d);
+    fclose(puntador);
+
+   }
+  
+
+

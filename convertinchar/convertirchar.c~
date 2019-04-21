@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<sdelib.h>
+
+int main(){
+ string cadena ="25"
+  int numero=0;
+  numero =atoi(cadena );
+  printf("el numero es !! |%d|",numero);
+}

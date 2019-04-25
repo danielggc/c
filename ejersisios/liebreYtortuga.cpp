@@ -6,6 +6,7 @@ int *liebre (int *ptr);
 int *tortuga(int *ptr);
 
 int main () {
+  int valorFinal=0;
   int contador=0;
   int arrayL[3];
   int arrayT[3];
@@ -16,36 +17,72 @@ int main () {
   int *ptrL;
   int *ptrT;
   ptrL=&arrayL[0];
+  ptrT=&arrayT[0];
   ptrL=(int*) malloc (3*sizeof(int));
   ptrT=(int*) malloc(3*sizeof(int));
   ptrL=liebre(ptrL);
   ptrL=ptrL-1;
-  ptrL=liebre(ptrL);
-  ptrL=ptrL-1;
-  ptrL=liebre(ptrL);
-   ptrL=ptrL-1;
-  ptrL=liebre(ptrL);
+  ptrT=tortuga(ptrT);
+  ptrT=ptrT-1;
+   while(*ptrT<70){
+    if(*ptrL==*ptrT)printf("auch¡¡");
+    ptrL=ptrL+1;
+    if (*ptrL%70==0){
+      ptrL=ptrL-1;
+      printf("la posicion de la tortuga es %d y el de la liebres %d  ",*ptrT,*ptrL);
+    }
+    if(*ptrL>*ptrT&&*ptrL>60){
+    while(valorFinal<=0){
+      ptrL=liebre(ptrL);
+      ptrL=ptrL-1;
+      ptrT=tortuga(ptrT);
+      ptrT=ptrT-1;
+      if(*ptrL>=70&&*ptrT<70){
+	valorFinal=70-*ptrT;
+	*ptrT=valorFinal+*ptrT;
+	printf("gana la tortuga");
+      }
+    }
+    }
+    else{
+      ptrL=liebre(ptrL);
+      ptrT=tortuga(ptrT);
+      ptrT=ptrT-1;
+     }
+    
+   }
+ 
 }
 
 
 int *tortuga(int *ptr){
-  int dato=0;
-  int contador=0;
-  int resivido=0;
+   int aleatorioT=0;
+    int valorPocisionT=0;
+    int posicionT=*ptr;
+    aleatorioT = 1+rand() % (3-1);
+    if(aleatorioT==1){
+      valorPocisionT=3;
+      }
+    else{
+      if(aleatorioT==2){
+      valorPocisionT=-6;
+        }
+      else{
+        if(aleatorioT==3){
+        valorPocisionT =1;
+        }
 
-    dato = 1+rand() % (5 - 1);
-      if(dato==1){
-	dato=3;
       }
-      if(dato==2){
-	dato =-6;
-      }
-      if(dato==3){
-	dato =1;
-      }
-      if(dato<0)dato=0;
-      resivido=dato+resivido ; 
-      contador++;
+    }
+  
+    posicionT=valorPocisionT+posicionT;
+    *ptr=posicionT;
+    ptr=ptr+1;
+    int contadorT=*ptr;
+    contadorT++;
+    *ptr=contadorT;
+   
+    return ptr;
       
      
      }
@@ -80,7 +117,6 @@ int  *liebre(int *ptr){
     }
   
     posicionL=valorPocisionL+posicionL;
-    printf("puntero !%d! y el aleatorio es #%d#",*ptr,valorPocisionL);
     *ptr=posicionL;
     ptr=ptr+1;
     int contadorL=*ptr;

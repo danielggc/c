@@ -19,8 +19,13 @@ int main () {
   ptrL=(int*) malloc (3*sizeof(int));
   ptrT=(int*) malloc(3*sizeof(int));
   ptrL=liebre(ptrL);
-  ptrL=liebre(ptrL); ptrL=liebre(ptrL);ptrL=liebre(ptrL);ptrL=liebre(ptrL);ptrL=liebre(ptrL);ptrL=liebre(ptrL);ptrL=liebre(ptrL);ptrL=liebre(ptrL);
- }
+  ptrL=ptrL-1;
+  ptrL=liebre(ptrL);
+  ptrL=ptrL-1;
+  ptrL=liebre(ptrL);
+   ptrL=ptrL-1;
+  ptrL=liebre(ptrL);
+}
 
 
 int *tortuga(int *ptr){
@@ -39,40 +44,48 @@ int *tortuga(int *ptr){
 	dato =1;
       }
       if(dato<0)dato=0;
-      resivido=dato+resivido ;
+      resivido=dato+resivido ; 
       contador++;
       
      
      }
 
 int  *liebre(int *ptr){
-  int dato1=0;
-  int resivido1=*ptr;
-  printf("··%d··",resivido1);
-  dato1 = 1+rand() % (5- 1);
-    if(dato1==1){
-	dato1=0;
+    int aleatorioL=0;
+    int valorPocisionL=0;
+    int posicionL=*ptr;
+    aleatorioL = 1+rand() % (5- 1);
+    if(aleatorioL==1){
+      valorPocisionL=0;
       }
-    if(dato1==2){
-	dato1 =9;
+    else{
+      if(aleatorioL==2){
+      valorPocisionL=9;
+        }
+      else{
+        if(aleatorioL==3){
+        valorPocisionL = -12;
+        }
+	else{
+	  if(aleatorioL==4){
+           valorPocisionL =1;
+	  }
+	  else{
+            if (aleatorioL==5){
+              valorPocisionL=2;
+            }
+          }
+        }
       }
-    if(dato1==3){
-	dato1 =-12;
-      }
-    if(dato1==4){
-	dato1 =1;
-      }
-    if(dato1==5){
-	dato1 =-2;
-      }
-   if(dato1<0)dato1=0;
-   resivido1=dato1+resivido1;
-   printf(" numero%d,dato %d",resivido1,dato1);
-   ptr=&resivido1;
-   printf("puntero !%d!",*ptr);
-   ptr=ptr+1;
-   int contador1=*ptr;
-   contador1++;
-   ptr=&contador1;
-   return ptr;
+    }
+  
+    posicionL=valorPocisionL+posicionL;
+    printf("puntero !%d! y el aleatorio es #%d#",*ptr,valorPocisionL);
+    *ptr=posicionL;
+    ptr=ptr+1;
+    int contadorL=*ptr;
+    contadorL++;
+    *ptr=contadorL;
+   
+    return ptr;
 }

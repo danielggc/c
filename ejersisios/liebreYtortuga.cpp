@@ -31,6 +31,7 @@ int main () {
       ptrL=ptrL-1;
       printf("la posicion de la tortuga es %d y el de la liebres %d  ",*ptrT,*ptrL);
     }
+    ptrL=ptrL-1;
     if(*ptrL>*ptrT&&*ptrL>60){
     while(valorFinal<=0){
       ptrL=liebre(ptrL);
@@ -40,12 +41,14 @@ int main () {
       if(*ptrL>=70&&*ptrT<70){
 	valorFinal=70-*ptrT;
 	*ptrT=valorFinal+*ptrT;
+	printf(" valor final de la ortuga %dy el de la liebre %d\n",*ptrT,*ptrL);
 	printf("gana la tortuga");
       }
     }
     }
     else{
       ptrL=liebre(ptrL);
+      ptrL=ptrL-1;
       ptrT=tortuga(ptrT);
       ptrT=ptrT-1;
      }
@@ -76,6 +79,7 @@ int *tortuga(int *ptr){
     }
   
     posicionT=valorPocisionT+posicionT;
+    printf("ª%dª",*ptr);
     *ptr=posicionT;
     ptr=ptr+1;
     int contadorT=*ptr;
@@ -101,7 +105,7 @@ int  *liebre(int *ptr){
         }
       else{
         if(aleatorioL==3){
-        valorPocisionL = -12;
+        valorPocisionL = 3;
         }
 	else{
 	  if(aleatorioL==4){
@@ -118,10 +122,10 @@ int  *liebre(int *ptr){
   
     posicionL=valorPocisionL+posicionL;
     *ptr=posicionL;
+    printf("/%d/",*ptr);
     ptr=ptr+1;
     int contadorL=*ptr;
     contadorL++;
     *ptr=contadorL;
-   
     return ptr;
 }
